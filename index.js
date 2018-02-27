@@ -1,6 +1,7 @@
 const Particle = require('particle-api-js');
 const dotenv = require('dotenv');
 const particle = new Particle();
+const speakTemperature = require('./speakTemperature');
 
 dotenv.config();
 
@@ -35,5 +36,6 @@ function watchForEvents(token) {
 }
 
 function outputTemperature(t) {
-  console.log('Temperature', t)
+  console.log('Temperature', t);
+  speakTemperature(t);
 }
